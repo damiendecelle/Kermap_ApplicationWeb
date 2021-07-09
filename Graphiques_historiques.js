@@ -7,7 +7,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url = "/Data/" + queryLoc + "_mensuelle.csv"
+      var url = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/Auckland_journaliere.csv" + queryLoc + "_mensuelle.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -72,7 +72,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity1() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url1 = "/Data/" + queryLoc + "_mensuelle.csv"
+      var url1 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -122,7 +122,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity2() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url2 = "/Data/" + queryLoc + "_mensuelle.csv"
+      var url2 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -166,7 +166,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity3() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url3 = "/Data/" + queryLoc + "_mensuelle.csv"
+      var url3 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -206,7 +206,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity4() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url4 = "/Data/" + queryLoc + "_mensuelle.csv"
+      var url4 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -260,7 +260,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity5() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url5 = "/Data/" + queryLoc + "_mensuelle.csv"
+      var url5 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -314,7 +314,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity6() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url6 = "/Data/" + queryLoc + "_journaliere.csv"
+      var url6 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_journaliere.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -360,7 +360,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity7() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url7 = "/Data/" + queryLoc + "_journaliere.csv"
+      var url7 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_journaliere.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
@@ -401,7 +401,7 @@
       // On appelle le CSV avec la fonction qui nous permet de choisir une ville
       function fetchCity8() {
       var queryLoc = document.getElementById("queryLoc").value;
-      var url8 = "/Data/" + queryLoc + "_journaliere.csv"
+      var url8 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_journaliere.csv"
 
         // Et on ajoute au graphique la donnée de la manière suivante : 
         var chart = c3.generate({
