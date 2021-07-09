@@ -148,7 +148,7 @@ function buttonClickGET1() {
           return lon = 8.53    
       }
 
-    var url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=" +cityLat()+ "&lon=" +cityLon()+ "&APPID=b75ccd5c360174f5af7eed7eae5f84b8&lang=fr"
+    var url = "https://api.openweathermap.org/data/2.5/air_pollution?lat=" +cityLat()+ "&lon=" +cityLon()+ "&APPID=b75ccd5c360174f5af7eed7eae5f84b8&lang=fr"
 
     $.get(url, callBackGetSuccess1).done(function () {
         //alert( "second success")
