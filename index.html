@@ -1,0 +1,493 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="svg" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/b/bf/Circle-icons-weather.svg">
+		<title>KERMAP | Application météo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<section id="header">
+			<div class="inner">
+				<img src="images/meteo.svg" height=150px>
+				<h1><strong>Quel temps fait-il aujourd'hui ?</strong><br>
+					Météo actuelle, Historique et Indice de Qualité de l'Air<br><br></h1>
+				<h5>Proposé par le <a href="https://esigat.wordpress.com/" target="_blank" >Master SIGAT </a><br>
+				en partenariat avec <a href="https://kermap.com/" target="_blank" >KERMAP </a></h5>
+				<ul class="actions special">
+					<li><a href="#one" class="button scrolly">Venez découvrir !</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Main -->
+
+		<section id="one"></section>
+		<br>
+			<div class="container">
+				
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-xsmall">
+						<select id="queryLoc" type=text>
+						<option selected>Choisir une ville</option>
+						<option value='Auckland'>Auckland</option>
+						<option value='Bangkok'>Bangkok</option>
+						<option value='Beijing'>Beijing</option>
+						<option value='Berlin'>Berlin</option>
+						<option value='Cape Town'>Cape Town</option>
+						<option value='London'>London</option>
+						<option value='Los Angeles'>Los Angeles</option>
+						<option value='Mexico City'>Mexico City</option>
+						<option value='Montreal'>Montreal</option>
+						<option value='Moscow'>Moscow</option>
+						<option value='New Delhi'>New Delhi</option>
+						<option value='New York'>New York</option>
+						<option value='Prague'>Prague</option>
+						<option value='Rio de Janeiro'>Rio de Janeiro</option>
+						<option value='Rome'>Rome</option>
+						<option value='Shanghai'>Shanghai</option>
+						<option value='Sydney'>Sydney</option>
+						<option value='Tel Aviv'>Tel Aviv</option>
+						<option value='Tokyo'>Tokyo</option>
+						<option value='Vancouver'>Vancouver</option>
+						<option value='Warsaw'>Warsaw</option>
+						<option value='Washington DC'>Washington DC</option>
+						<option value='Zurich'>Zurich</option>
+						</select>
+					</div>
+				
+					<div class="col-6 col-12-xsmall">
+						<a class="button primary" onclick="buttonClickGET() ; buttonClickGET1() ; buttonClickGET2() ; fetchCity() ; fetchCity1() ; fetchCity2() ; fetchCity3() ; fetchCity4() ; fetchCity5() ; fetchCity6() ; fetchCity7() ; fetchCity8() ; fetchCity9() ; fetchCity10() ; fetchCity11()">Rechercher</a>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="row gtr-uniform gtr-50">
+					
+				</div>
+				
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-xsmall">
+						<div class="box">
+						<h1>La météo en temps réel</h1>
+						<h3 id="weather-status"></h3>
+							<div class="box_2">
+								<div><h2 id="description"></h2></div>
+								<div id=icon_main></div>
+							</div>
+							<div class="box_3">	
+								<div><img src="images/thermometer.svg" height=100px></div>
+								<div><h2 id="zone_temp"></h2></div>
+							</div>	
+							<br>
+							<div class="box_2">
+								<div><h4 id="ressenti"></h4></div>
+								<div><h4 id="ecart_temp"></h4></div>
+							</div>
+							<br>
+							<div class="box_3">
+								<div><img src="images/humidite.svg" height=100px></div>
+								<div><h2 id="zone_humidité"></h2></div>
+							</div>
+							<div class="box_3">
+								<div><img src="images/pression.svg" height=70px></div>
+								<div><h4 id="zone_pression"></h4></div>
+								<div><img src="images/wind.svg" height=70px></div>
+								<div><h4 id="zone_vent"></h4></div>
+							</div>
+							<div class="box_3">
+								<div><img src="images/sunrise.svg" height=70px></div>
+								<div><h4 id="lever"></h4></div>
+								<div><img src="images/sunset.svg" height=70px></div>
+								<div><h4 id="coucher"></h4></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-6 col-12-xsmall">
+						<div id='map'></div>
+					</div>
+				
+				</div>
+				
+					
+				<br>
+				<div class="box">
+					<div class="row gtr-uniform gtr-50">
+						<div class="col-6 col-12-xsmall">
+								<h1>La qualité de l'air actuelles</h1> 
+									<div class="box_2">
+										<div><h2>Indice AQI : </h2></div>
+										<div>
+											<h4 id="aqi_air"></h4>
+											<br>
+										</div>
+									</div>
+								<br>	
+						</div>
+						<div class="col-6 col-12-xsmall">
+							<h3>Concentration en polluants</h3>
+							<div class="box_4">
+								<p id="co"></p>
+								<p id="nh3"></p>
+								<p id="no"></p>
+								<p id="no2"></p>
+							</div>
+							<div class="box_4">
+								<p id="o3"></p>
+								<p id="pm2_5"></p>
+								<p id="pm10"></p>
+								<p id="so2"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<br>
+
+				<hr>
+				<h1>Prévisions météo</h1>
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-xsmall">
+						<y>Prévision météo horaire sur 24h</y>
+						<div id="chart10">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Prévision météo sur 7 jours</y>
+						<div id="chart9">the chart is supposed to be here</div>
+					</div>
+				</div>
+
+				<hr>
+				<h1>Données journalières</h1>
+
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-xsmall">
+						<y>Températures journalières du mois précédent</y>
+						<div id="chart6">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Précipitations journalières du mois précédent</y>
+						<div id="chart7">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Ecart de températures aux normales de saison journalières du mois précédent</y>
+						<div id="chart8">the chart is supposed to be here</div>
+					</div>
+				</div>
+
+				<hr>
+				<h1>Données mensuelles</h1>
+
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-xsmall">
+						<y>Températures mensuelles en 2O2O</y>
+						<div id="chart">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Précipitations mensuelles en 2O2O</y>
+						<div id="chart1">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Ecart de températures aux normales de saison mensuelles en 2O2O</y>
+						<div id="chart2">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Ecart de précipitations aux normales de saison mensuelles en 2O2O</y>
+						<div id="chart3">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Diagramme ombrothermique des normales de saison (1981 - 2010)</y>
+						<div id="chart4">the chart is supposed to be here</div>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<y>Diagramme ombrothermique de 2O2O</y>
+						<div id="chart5">the chart is supposed to be here</div>
+					</div>
+				</div>
+			</div>
+			<br>
+		</section>
+
+
+
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="copyright">
+				<li>&copy; Openwheather, These data were obtained from the NASA Langley Research Center (LaRC) POWER Project funded through the NASA Earth Science/Applied Science Program.</li><br>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Une réalisation du Master SIGAT</li>
+			</ul>
+			<br>
+			<ul class="icons">
+				<img src="images/LOGO.png" height=80px>
+			</ul>
+		</section>
+
+
+
+
+		<!-- Scripts -->
+
+			<!-- Jquery -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			
+			<!-- SCripts Javascript personalisés -->
+			<script src="API_OpenWeather_Temps_reel.js"></script>
+			<script src="API_OpenWeather_One_Call.js"></script>
+			<script src="API_OpenWeather_Pollution_air.js"></script>
+			<script src="Graphiques_historiques.js"></script>
+
+			<!-- Mapbox -->
+			<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+			<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+
+			<!-- C3js -->
+			<link href="c3/c3.min.css" rel="stylesheet">
+			<script src="c3/d3-5.8.2.min.js" charset="utf-8"></script>
+			<script src="c3/c3.min.js"></script>
+
+			<!-- Template JS -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		</body>
+
+		<script type="text/javascript">
+				
+		// Configuration de la carte
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVuZGVjZWxsZSIsImEiOiJjazk0YTRpbnkwM2plM21vdWpnNXd1Z3JqIn0.9QS_uhJsKQ7iGH-urTNUGg';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/satellite-streets-v11',
+			center: [-1.7033546065650105, 48.118588632350985],
+			zoom: 17
+		});
+
+		function buttonClickGET2() {
+		var queryLoc = document.getElementById("queryLoc").value;
+
+		// Fonction permettant de déterminer la latitude d'une ville
+		function cityLat(){
+		if (queryLoc == 'Auckland')
+			return lat = -36.85
+		else if (queryLoc == 'Bangkok')
+			return lat = 13.77
+		else if (queryLoc == 'Beijing')
+			return lat = 39.92
+		else if (queryLoc == 'Berlin')
+			return lat = 52.51
+		else if (queryLoc == 'Cape Town')
+			return lat = -33.94
+		else if (queryLoc == 'London')
+			return lat = 51.50
+		else if (queryLoc == 'Los Angeles')
+			return lat = 34.05
+		else if (queryLoc == 'Mexico City')
+			return lat = 19.44
+		else if (queryLoc == 'Montreal')
+			return lat = 45.49
+		else if (queryLoc == 'Moscow')
+			return lat = 55.75
+		else if (queryLoc == 'New Delhi')
+			return lat = 28.62
+		else if (queryLoc == 'New York')
+			return lat = 40.71
+		else if (queryLoc == 'Prague')
+			return lat = 50.07
+		else if (queryLoc == 'Rio de Janeiro')
+			return lat = -22.91
+		else if (queryLoc == 'Rome')
+			return lat = 41.90
+		else if (queryLoc == 'Shanghai')
+			return lat = 31.22
+		else if (queryLoc == 'Sydney')
+			return lat = -33.87
+		else if (queryLoc == 'Tel Aviv')
+			return lat = 32.08
+		else if (queryLoc == 'Tokyo')
+			return lat = 35.68
+		else if (queryLoc == 'Vancouver')
+			return lat = 49.28
+		else if (queryLoc == 'Warsaw')
+			return lat = 52.22
+		else if (queryLoc == 'Washington DC')
+			return lat = 38.90
+		else if (queryLoc == 'Zurich')
+			return lat = 47.37    
+		}
+
+		// Fonction permettant de déterminer la longitude d'une ville
+		function cityLon(){
+		if (queryLoc == 'Auckland')
+			return lon = 174.76
+		else if (queryLoc == 'Bangkok')
+			return lon = 100.49
+		else if (queryLoc == 'Beijing')
+			return lon = 116.40
+		else if (queryLoc == 'Berlin')
+			return lon = 13.39
+		else if (queryLoc == 'Cape Town')
+			return lon = 18.41
+		else if (queryLoc == 'London')
+			return lon = -0.13
+		else if (queryLoc == 'Los Angeles')
+			return lon = -118.24
+		else if (queryLoc == 'Mexico City')
+			return lon = -99.13
+		else if (queryLoc == 'Montreal')
+			return lon = -73.56
+		else if (queryLoc == 'Moscow')
+			return lon = 37.62
+		else if (queryLoc == 'New Delhi')
+			return lon = 77.20
+		else if (queryLoc == 'New York')
+			return lon = -74.00
+		else if (queryLoc == 'Prague')
+			return lon = 14.44
+		else if (queryLoc == 'Rio de Janeiro')
+			return lon = -43.16
+		else if (queryLoc == 'Rome')
+			return lon =  12.48
+		else if (queryLoc == 'Shanghai')
+			return lon =  121.45
+		else if (queryLoc == 'Sydney')
+			return lon =  151.21
+		else if (queryLoc == 'Tel Aviv')
+			return lon =  34.77
+		else if (queryLoc == 'Tokyo')
+			return lon =  139.76
+		else if (queryLoc == 'Vancouver')
+			return lon = -123.13
+		else if (queryLoc == 'Warsaw')
+			return lon =  21.00
+		else if (queryLoc == 'Washington DC')
+			return lon = -77.03
+		else if (queryLoc == 'Zurich')
+			return lon = 8.53    
+		}
+			// Se rendre à l'endroit sélectionné
+			map.flyTo({
+				center: [cityLon(), cityLat()],
+				zoom: 9
+				});
+			
+			
+		}
+
+		// Ajout des controles de navigation
+		var nav = new mapboxgl.NavigationControl();
+			map.addControl(nav, 'top-right');
+
+			// Ajout Echelle cartographique
+			map.addControl(new mapboxgl.ScaleControl({
+				maxWidth: 120,
+				unit: 'metric'
+			}));
+
+		// Génération d'un graphique vide afin d'afficher un graphique avant le chargement des autres
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart1',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart2',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart3',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart4',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart5',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart6',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart7',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart8',
+			data: {
+				columns: [],
+			},
+			});
+
+		// On génère un graphique vide
+		var chart = c3.generate({
+			bindto: '#chart9',
+			data: {
+				columns: [],
+			},
+			});
+		
+			// On génère un graphique vide
+			var chart = c3.generate({
+			bindto: '#chart10',
+			data: {
+				columns: [],
+			},
+			});
+
+		</script>
+
+		</html>
