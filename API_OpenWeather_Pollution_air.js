@@ -28,19 +28,19 @@ var callBackGetSuccess1 = function (data) {
     var element = document.getElementById("aqi_air");
     element.innerHTML =(data.list[0].main.aqi);
     if (data.list[0].main.aqi== 1){
-      return element.innerHTML = "Très bon"+"<br>"+"<img src=\"/images/Tres_bien_bien.png\" height=\"50px\">";
+      return element.innerHTML = "Très bon"+"<br>"+"<img src=\"https://raw.githubusercontent.com/damiendecelle/Kermap_ApplicationWeb/main/images/Tres_bien_bien.png\" height=\"50px\">";
     }
     else if (data.list[0].main.aqi==2){
-      return element.innerHTML = " Bon"+"<br>"+"<img src=\"/images/Tres_bien_bien.png\" height=\"50px\">";
+      return element.innerHTML = " Bon"+"<br>"+"<img src=\"https://raw.githubusercontent.com/damiendecelle/Kermap_ApplicationWeb/main/images/Tres_bien_bien.png\" height=\"50px\">";
     }
     else if (data.list[0].main.aqi== 3){
-      return element.innerHTML = " Modéré"+"<br>"+"<img src=\"/images/Modere.png\" height=\"50px\">";
+      return element.innerHTML = " Modéré"+"<br>"+"<img src=\"https://raw.githubusercontent.com/damiendecelle/Kermap_ApplicationWeb/main/images/Modere.png\" height=\"50px\">";
     }
     else if (data.list[0].main.aqi== 4){
-      return element.innerHTML = " Mauvais"+"<br>"+"<img src=\"/images/Mauvais_tres_mauvais.png\" height=\"50px\">";
+      return element.innerHTML = " Mauvais"+"<br>"+"<img src=\"https://raw.githubusercontent.com/damiendecelle/Kermap_ApplicationWeb/main/images/Mauvais_tres_mauvais.png\" height=\"50px\">";
     }
     else if (data.list[0].main.aqi==5){
-      return element.innerHTML = "Très Mauvais"+"<br>"+"<img src=\"/images/Mauvais_tres_mauvais.png\" height=\"50px\">";
+      return element.innerHTML = "Très Mauvais"+"<br>"+"<img src=\"https://raw.githubusercontent.com/damiendecelle/Kermap_ApplicationWeb/main/images/Mauvais_tres_mauvais.png\" height=\"50px\">";
     }
     
 }
