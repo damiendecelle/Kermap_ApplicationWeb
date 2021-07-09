@@ -107,7 +107,7 @@ function fetchCity9() {
     
     // Appel de l'API en fonction de la latitude et la longitude de la ville
     var url9 = "https://api.openweathermap.org/data/2.5/onecall?lat=" +cityLat()+ "&lon=" +cityLon()+ "&exclude=current,minutely,hourly,alerts&appid=5c3ff5a9356fcec291824c0a99459121&lang=fr"
-    var url14 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.json"
+    var url14 = "https://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.json"
 
     fetch(url9)
       // On transforme la réponse de l'API en JSON, c'est plus simple.
@@ -296,7 +296,7 @@ function fetchCity10() {
   
   // Appel de l'API en fonction de la latitude et la longitude de la ville
   var url10 = "https://api.openweathermap.org/data/2.5/onecall?lat=" +cityLat()+ "&lon=" +cityLon()+ "&exclude=current,minutely,alerts,daily&appid=5c3ff5a9356fcec291824c0a99459121&lang=fr"
-  var url13 = "http://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.json"
+  var url13 = "https://cors.io/?https://github.com/damiendecelle/Data_Kermap_ApplicationMeteo/blob/main/" + queryLoc + "_mensuelle.json"
 
   fetch(url10)
     // On transforme la réponse de l'API en JSON, c'est plus simple.
